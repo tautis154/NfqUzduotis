@@ -16,9 +16,6 @@ class Kernel extends BaseKernel
         $container->import('../config/{packages}/*.yaml');
         $container->import('../config/{packages}/'.$this->environment.'/*.yaml');
 
-        if (in_array($this->getEnvironment(), array('prod'))) {
-            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-        }
         if (is_file(\dirname(__DIR__).'/config/services.yaml')) {
             $container->import('../config/{services}.yaml');
             $container->import('../config/{services}_'.$this->environment.'.yaml');
@@ -29,9 +26,6 @@ class Kernel extends BaseKernel
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        if (in_array($this->getEnvironment(), array('prod'))) {
-            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-        }
         $routes->import('../config/{routes}/'.$this->environment.'/*.yaml');
         $routes->import('../config/{routes}/*.yaml');
 
