@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="Updating again">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +161,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598737098066</updated>
-      <workItem from="1598737099109" duration="2277000" />
+      <workItem from="1598737099109" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="Completed all the tasks">
       <created>1598738817764</created>
@@ -184,7 +184,42 @@
       <option name="project" value="LOCAL" />
       <updated>1598739005661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updating again">
+      <created>1598739379133</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598739379133</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updating again">
+      <created>1598739426146</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598739426146</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updating again">
+      <created>1598739486858</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598739486858</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updating again">
+      <created>1598739518641</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598739518641</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updating again">
+      <created>1598739590599</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1598739590599</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
