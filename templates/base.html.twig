@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-    Hey
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+{% block header %}
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('registration_code') }}">Check Appointment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('display_board') }}">Display Board</a>
+                        </li>
+                        {% if app.user %}
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('customer_managing') }}">Customer Managing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                            </li>
+
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('login') }}">Login</a>
+                            </li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block flash_messages %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="alert alert-{{ type }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{% trans %}Close{% endtrans %}</span></button>
+                {{ message | raw }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
 </html>
