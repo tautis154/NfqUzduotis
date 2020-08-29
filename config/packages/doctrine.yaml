@@ -1,5 +1,9 @@
 doctrine:
     dbal:
+        parameters:
+            env(DATABASE_URL): 'mysql://root:@db:3306/symfony'
+            database_user: root
+            database_password: root
         url: '%env(resolve:DATABASE_URL)%'
 
         # IMPORTANT: You MUST configure your server version,
@@ -16,7 +20,3 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Entity'
                 prefix: 'App\Entity'
                 alias: App
-    parameters:
-        env(DATABASE_URL): 'mysql://root:@db:3306/my_database'
-        database_user: root
-        database_password: root
