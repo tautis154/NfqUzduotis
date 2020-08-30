@@ -6,6 +6,7 @@
     <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .disabled_button {border: 2px solid #999999;background-color: #cccccc;color: #666666;}
     </style>
 
     <div class="example-wrapper">
@@ -26,21 +27,21 @@
                             <td>
                                 {% if atleastOneAppointedCustomer == 1 %}
                                     {% if customer.id ==  customerIsInAppointmentId  %}
-                                        <button type="btn btn btn-success" disabled>Appoint</button>
+                                        <button class="btn btn-dark" disabled>Appoint</button>
 
                                         <a href="#" class="btn btn-success update-endCustomerAppointment" data-id="{{ customer.id }}">End Appointment</a>
                                         <a href="#" class="btn btn-danger delete-customer" data-id="{{ customer.id }}">Cancel</a>
 
                                     {% else %}
 
-                                        <button type="btn btn-sucess" disabled>Appoint</button>
-                                        <button type="btn btn-success" disabled>End Appointment</button>
+                                        <button class="btn btn-dark"  disabled>Appoint</button>
+                                        <button class="btn btn-dark"  disabled>End Appointment</button>
                                         <a href="#" class="btn btn-danger delete-customer" data-id="{{ customer.id }}">Cancel</a>
 
                                     {% endif %}
                                 {% else %}
                                     <a href="#"  class="btn btn-success update-customerAppointment" data-id="{{ customer.id }}">Appoint</a>
-                                    <button type="btn btn-success" disabled>End Appointment</button>
+                                    <button class="btn btn-dark" disabled>End Appointment</button>
                                     <a href="#" class="btn btn-danger delete-customer" data-id="{{ customer.id }}">Cancel</a>
                                 {% endif %}
                             </td>
