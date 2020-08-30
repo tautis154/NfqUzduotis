@@ -79,6 +79,8 @@ class HomePageController extends AbstractController
             ])
             ->getForm();
 
+        //Padaryt ifa kai gauna ta datetime, kad praeitu pro database ir jei suranda jau toki pati datetime
+        //tai ismestu errora, kad jau toks laikas yra pasirinktas
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $customer = new Customer();

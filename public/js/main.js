@@ -11,7 +11,7 @@ if (customers) {
                     {
                         method: 'DELETE'
                     }).then(res => window.location.reload());
-            }endCustomerAppointment
+            }
         }
         else if (e.target.className === 'btn btn-success update-customerAppointment') {
             if (confirm('Are you sure?')) {

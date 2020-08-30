@@ -2,10 +2,33 @@
 
 {% block body %}
 
-    <div class="container">
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .center {text-align: center; margin: 1em auto;}
+
+    </style>
+    <div class="example-wrapper">
         <span id="meal-plan-title"> <h1> Make an appointment with a doctor</h1></span>
         {{ form_start(form) }}
+        <div class="center">
+        {{ form_widget(form.firstName, {'attr':
+            {'class': 'center', 'placeholder': 'Enter your First Name'}}
+        ) }}
+        {{ form_widget(form.doctors, {'attr':
+            {'class': 'center', 'placeholder': 'Registration code'}}
+        ) }}
+        </div>
 
+
+        {{ form_widget(form.selectedTime, {'attr':
+            {'class': 'center', 'placeholder': 'Enter your First Name'}}
+        ) }}
+        <div class="center">
+        {{ form_widget(form.search, {'attr':
+            {'class': 'center', 'placeholder': 'Registration code'}}
+        ) }}
+        </div>
         {{ form_end(form) }}
     </div>
 {% endblock %}

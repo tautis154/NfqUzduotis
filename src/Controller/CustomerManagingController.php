@@ -46,6 +46,8 @@ class CustomerManagingController extends AbstractController
      */
     public function delete($id)
     {
+
+        echo 'view';
         $customer = $this->getDoctrine()->getRepository(Customer::class)->find($id);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($customer);
@@ -60,6 +62,7 @@ class CustomerManagingController extends AbstractController
      */
     public function updateAppointment($id)
     {
+
         $customer = $this->getDoctrine()->getRepository(Customer::class)->find($id);
         $entityManager = $this->getDoctrine()->getManager();
         $customer->setIsInAppointment('1');
