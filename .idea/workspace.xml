@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="Updated twig so display board shows correctly">
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
+    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="Added error pages">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/doctor_login/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor_login/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +171,7 @@
       <workItem from="1598820060666" duration="2396000" />
       <workItem from="1598824659269" duration="8522000" />
       <workItem from="1598868589450" duration="1491000" />
-      <workItem from="1598870821156" duration="351000" />
+      <workItem from="1598870821156" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="Completed all the tasks">
       <created>1598738817764</created>
@@ -383,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598869818599</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added error pages">
+      <created>1598871195671</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1598871195671</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +414,8 @@
     <MESSAGE value="Updating again" />
     <MESSAGE value="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit" />
     <MESSAGE value="Updated twig so display board shows correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated twig so display board shows correctly" />
+    <MESSAGE value="Added error pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added error pages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="388" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598830954288">
