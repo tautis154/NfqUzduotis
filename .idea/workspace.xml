@@ -19,12 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="Added error pages">
+    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="Updating error pages">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/doctor_login/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor_login/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customer_managing/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer_managing/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +34,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -155,7 +158,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/receptai" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../receptai" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -171,7 +174,7 @@
       <workItem from="1598820060666" duration="2396000" />
       <workItem from="1598824659269" duration="8522000" />
       <workItem from="1598868589450" duration="1491000" />
-      <workItem from="1598870821156" duration="773000" />
+      <workItem from="1598870821156" duration="1415000" />
     </task>
     <task id="LOCAL-00001" summary="Completed all the tasks">
       <created>1598738817764</created>
@@ -390,7 +393,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598871195671</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Updating error pages">
+      <created>1598871618497</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1598871618497</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Updating error pages">
+      <created>1598871871611</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1598871871611</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,21 +432,34 @@
     <MESSAGE value="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit" />
     <MESSAGE value="Updated twig so display board shows correctly" />
     <MESSAGE value="Added error pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added error pages" />
+    <MESSAGE value="Updating error pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating error pages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="388" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598830954288">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="720" y="388" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598830954288" />
-    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598870850279">
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1598872240785">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598870850279" />
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598872240785" />
+    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598872015527">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598872015527" />
     <state x="1398" y="384" width="497" height="561" key="NewPhpClassDialog" timestamp="1598737752213">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1398" y="384" width="497" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598737752213" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1598871879385">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1598871879385" />
+    <state x="911" y="330" width="478" height="410" key="VcsDiffUtil.ChangesDialog" timestamp="1598872036369">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="911" y="330" width="478" height="410" key="VcsDiffUtil.ChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598872036369" />
     <state x="1140" y="241" width="770" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598781791690">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
