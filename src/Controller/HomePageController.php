@@ -2,20 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Customer;
-use App\Entity\Doctor;
-use Doctrine\ORM\EntityManagerInterface;
-use Exception;
+use App\Form\RegistrationType;
+use App\Service\HomePageService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomePageController extends AbstractController
@@ -23,83 +15,20 @@ class HomePageController extends AbstractController
     /**
      * @Route("/", name="home")
      * @param Request $request
-     * @param EntityManagerInterface $entityManager
+     * @param HomePageService $homePageService
      * @return RedirectResponse|Response
-     * @throws Exception
      */
-    public function index(Request $request, EntityManagerInterface $entityManager)
+    public function index(Request $request, HomePageService $homePageService)
     {
 
-        $choices = array();
+        $form = $this->createForm(RegistrationType::class);
 
-        $doctors = $this->getDoctrine()->getRepository(Doctor::class)->findAll();
-
-        foreach ($doctors as $specialty) {
-            $choices += array($specialty->getDoctorFirstName() => $specialty->getId());
-        }
-
-        $form = $this->createFormBuilder([])
-
-            ->add('doctors', ChoiceType::class, [
-                'label' => 'Doctor',
-                'placeholder' => 'Select a doctor',
-                'choices' => $choices,
-                'required' => false,
-                'label_attr' => [
-                    'class' => 'col-sm-2 control-label',
-                ],
-            ])
-            ->add('firstName', TextType::class, [
-                'label' => 'First Name',
-                'label_attr' => [
-                    'class' => 'col-sm-2 control-label',
-                ],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter your name',
-                    ]),
-                    new Length([
-                        'min' => 1,
-                        'minMessage' => 'Name is too short',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                        'maxMessage' => 'Name is too long',
-                    ])
-                ]
-            ])
-            ->add('selectedTime', DateTimeType::class, [
-                'placeholder' => [
-                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day', 'hour' => 'Hour', 'minute' => 'Minute'
-                ]
-            ])
-
-            ->add('search', SubmitType::class, [
-                'label' => 'Register',
-
-            ])
-            ->getForm();
-
-        //Padaryt ifa kai gauna ta datetime, kad praeitu pro database ir jei suranda jau toki pati datetime
-        //tai ismestu errora, kad jau toks laikas yra pasirinktas
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $customer = new Customer();
-            $length = 20;
-            $bytes = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 1, $length);
 
-            $customer->setCustomerFirstName(ucfirst(trim($form['firstName']->getData())));
-            $customer->setCustomerReservationCode($bytes);
+            $bytes = $homePageService->registrationCodeGenerator();
+            $homePageService->appointmentCreation($form, $bytes);
 
-            $doctor_id = $form['doctors']->getData();
-
-            $post = $this->getDoctrine()->getRepository(Doctor::class)->find($doctor_id);
-            $customer->setFkDoctor($post);
-            $customer->setAppointmentTime($form['selectedTime']->getData());
-            $customer->setAppointmentIsFinished(0);
-            $customer->setIsInAppointment(0);
-            $entityManager->persist($customer);
-
-            $entityManager->flush();
             $this->addFlash('success', 'This is your Registration code -    ' . $bytes . ' - Please save it immediately');
             return $this->redirect($this->generateUrl('home'));
         }

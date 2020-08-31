@@ -2,10 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Customer;
 use App\Form\BoardControllerType;
-use App\Repository\CustomerRepository;
-use DateTime;
+
+use App\Service\DisplayBoardService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,67 +33,31 @@ class DisplayBoardController extends AbstractController
     /**
      * @Route("/displayBoard", name="displayBoard")
      * @param Request $request
-     * @param CustomerRepository $customerRepository
+     * @param DisplayBoardService $displayBoard
      * @return Response
+     * @throws \Exception
      */
-    public function results(Request $request, CustomerRepository $customerRepository)
+    public function results(Request $request, DisplayBoardService $displayBoard)
     {
+
         $var = $request->get('registrationCode');
-        $recipes = $this->getDoctrine()->getRepository(Customer::class)
-            ->findBy([
-                'customerReservationCode' => $var
-            ]);
-        if (empty($recipes)) {
+
+        $customers = $displayBoard->getCustomerReservationCode($var);
+
+        if (empty($customers)) {
             $this->addFlash('warning', 'No such registration code exists, Try entering it again');
-            return $this->redirectToRoute('displayBoard');
+            return $this->redirectToRoute('display_board');
         }
 
-        $customerInAppointmentId = $customerRepository->getCustomersInAppointmentId();
+        $customersInAppointment = $displayBoard->getCustomersInAppointment();
+        $doctorFirstNames = $displayBoard->getCustomersInAppointDoctorFirstName($customersInAppointment);
+
+        $upcomingCustomersAppointment = $displayBoard->getUpcomingCustomersAppointment();
+        $doctorFirstNamesUpcomingVisit = $displayBoard->getUpcomingCustomersDoctor($upcomingCustomersAppointment);
+
+        $timeLeftForCustomer = $displayBoard->getTimesLeftForCustomers($upcomingCustomersAppointment);
 
 
-        $customersInAppointment = $this->getDoctrine()->getRepository(Customer::class)
-            ->findBy([
-                'id' => $customerInAppointmentId
-            ]);
-        $doctorFirstNames = array();
-        foreach ($customersInAppointment as $customer) {
-            $doctorFirstNames[] = ($customer->getFkDoctor()->getDoctorFirstName());
-        }
-
-
-        $upcomingCustomerAppointmentId = $customerRepository->getUpcomingCustomersAppointmentId();
-
-        $upcomingCustomersAppointment = $this->getDoctrine()->getRepository(Customer::class)
-            ->findBy(
-                [
-                    'id' => $upcomingCustomerAppointmentId,
-                ],
-                [
-                    'appointmentTime' => 'ASC'
-                ]
-            );
-
-        $doctorFirstNamesUpcomingVisit = array();
-        foreach ($upcomingCustomersAppointment as $customer) {
-            $doctorFirstNamesUpcomingVisit[] = ($customer->getFkDoctor()->getDoctorFirstName());
-        }
-        $timeLeftForCustomer = array();
-
-
-
-        foreach ($upcomingCustomersAppointment as $upcomingCustomer) {
-            $customerAppointmentTime = $upcomingCustomer->getAppointmentTime();
-
-            $now = date('Y-m-d h:i:s', time());
-            $x = new DateTime($now);
-            $x = $x->diff($customerAppointmentTime);
-
-            if (1 === $x->invert) {
-                $timeLeftForCustomer[] = 0;
-            } else {
-                $timeLeftForCustomer[] = $x->format("%Y Years %D Days %H:%I.%S");
-            }
-        }
         return $this->render('display_board/board.html.twig', [
             'customers' => $customersInAppointment,
             'doctorFirstNames' => $doctorFirstNames,

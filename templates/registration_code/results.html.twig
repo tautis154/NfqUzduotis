@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RegistrationCodeController!{% endblock %}
-
 {% block body %}
     <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper {border-radius: 25px; margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; text-align: center}
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .center {text-align: center; margin: 1em auto;}
     </style>
 
-    <div class="example-wrapper">
+    <div style="background-color:#FFEFD5;" class="example-wrapper">
 
+        <br>
         <h2>Dear {{ customerName }} </h2>
+
         {% if remainingTime != '0' %}
             <h2>You have {{ remainingTime }} till your appointment</h2>
 
@@ -18,6 +19,11 @@
             <h2>The doctor should appoint you soon</h2>
         {% endif %}
         {{ form_start(form) }}
+        <div class="center">
+            {{ form_widget(form.cancel, {'attr':
+                {'class': 'btn btn-danger center', 'placeholder': 'Registration code'}}
+            ) }}
+        </div>
         {{ form_end(form) }}
 
     </div>

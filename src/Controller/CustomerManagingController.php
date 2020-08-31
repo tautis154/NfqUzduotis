@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Customer;
-use App\Form\CustomerAdmissionType;
+use App\Service\CustomerManagementService;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,6 +23,7 @@ class CustomerManagingController extends AbstractController
         $user = $this->getUser();
 
         $customers = $user->getCustomers();
+
         $customerInAppointmentId = null;
         $atleastOneAppointedCustomer = 0;
 
@@ -43,15 +44,12 @@ class CustomerManagingController extends AbstractController
 
     /**
      * @Route("/customer/delete/{id}", name="customer_delete", methods={"DELETE"})
+     * @param $id
+     * @param CustomerManagementService $managementService
      */
-    public function delete($id)
+    public function delete($id, CustomerManagementService $managementService)
     {
-
-        echo 'view';
-        $customer = $this->getDoctrine()->getRepository(Customer::class)->find($id);
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($customer);
-        $entityManager->flush();
+        $managementService->deleteAppointment($id);
 
         $response = new Response();
         $response->send();
@@ -59,15 +57,12 @@ class CustomerManagingController extends AbstractController
 
     /**
      * @Route("/customer/updateAppointment/{id}", name="customer_update", methods={"UPDATE"})
+     * @param $id
+     * @param CustomerManagementService $managementService
      */
-    public function updateAppointment($id)
+    public function updateAppointment($id, CustomerManagementService $managementService)
     {
-
-        $customer = $this->getDoctrine()->getRepository(Customer::class)->find($id);
-        $entityManager = $this->getDoctrine()->getManager();
-        $customer->setIsInAppointment('1');
-        $entityManager->persist($customer);
-        $entityManager->flush();
+        $managementService->updateAppointment($id);
 
         $response = new Response();
         $response->send();
@@ -75,15 +70,12 @@ class CustomerManagingController extends AbstractController
 
     /**
      * @Route("/customer/endAppointment/{id}", name="customer_end", methods={"END"})
+     * @param $id
+     * @param CustomerManagementService $managementService
      */
-    public function endAppointment($id)
+    public function endAppointment($id, CustomerManagementService $managementService)
     {
-        $customer = $this->getDoctrine()->getRepository(Customer::class)->find($id);
-        $entityManager = $this->getDoctrine()->getManager();
-        $customer->setIsInAppointment('0');
-        $customer->setAppointmentIsFinished('1');
-        $entityManager->persist($customer);
-        $entityManager->flush();
+        $managementService->endAppointment($id);
 
         $response = new Response();
         $response->send();

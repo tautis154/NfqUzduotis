@@ -2,11 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Customer;
 use App\Form\CancelType;
 use App\Form\RegistrationCodeType;
-use DateTime;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Service\RegistrationCodeService;
+use App\Service\TimeDifferenceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,48 +35,31 @@ class RegistrationCodeController extends AbstractController
     /**
      * @Route("/search", name="search")
      * @param Request $request
-     * @param EntityManagerInterface $entityManager
+     * @param TimeDifferenceService $timeDifference
+     * @param RegistrationCodeService $registrationCodeService
      * @return Response
-     * @throws \Exception
      */
-    public function results(Request $request, EntityManagerInterface $entityManager)
+    public function results(Request $request, TimeDifferenceService $timeDifference, RegistrationCodeService $registrationCodeService)
     {
         $var = $request->get('registrationCode');
-        $recipes = $this->getDoctrine()->getRepository(Customer::class)
-            ->findBy([
-                'customerReservationCode' => $var
-            ]);
-        if (empty($recipes)) {
+
+        $customers=$registrationCodeService->getCustomerReservationCode($var);
+
+        if (empty($customers)) {
             $this->addFlash('warning', 'No such registration code exists, Try entering it again');
             return $this->redirectToRoute('registration_code');
         }
 
-        $customerFirstName = $recipes[0]->getCustomerFirstName();
-        $customerAppointmentTime = $recipes[0]->getAppointmentTime();
+        $customerFirstName = $customers[0]->getCustomerFirstName();
 
-        $now = date('Y-m-d h:i:s', time());
-        $x = new DateTime($now);
-        $x = $x->diff($customerAppointmentTime);
-
-        if (1 === $x->invert) {
-            $customerTimeLeft = 0;
-        }
-        else{
-            $customerTimeLeft = $x->format("%Y Years %D Days %H:%I.%S");
-        }
+        $customerTimeLeft = $timeDifference->timeDifferenceCalculator($customers);
 
         $form = $this->createForm(CancelType::class);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $cancelledCustomer = $this->getDoctrine()->getRepository(Customer::class)
-                ->findOneBy([
-                    'customerReservationCode' => $var
-                ]);
 
-            $entityManager->remove($cancelledCustomer);
-
-            $entityManager->flush();
+            $registrationCodeService->cancelCustomer($var);
 
             $this->addFlash('success', 'Your registration is successfully cancelled');
             return $this->redirectToRoute('home');

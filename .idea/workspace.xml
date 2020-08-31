@@ -19,17 +19,40 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="Updating again">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/entrypoints.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/vendors~app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CustomerManagementService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/DisplayBoardService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/HomePageService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/RegistrationCodeService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/TimeDifferenceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerManagingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerManagingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DisplayBoardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DisplayBoardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomePageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationCodeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationCodeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/customer_managing/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer_managing/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/display_board/board.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/display_board/board.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/display_board/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/display_board/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/doctor_login/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor_login/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration_code/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration_code/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration_code/results.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration_code/results.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -165,6 +188,9 @@
       <option name="presentableId" value="Default" />
       <updated>1598737098066</updated>
       <workItem from="1598737099109" duration="25846000" />
+      <workItem from="1598813074251" duration="2615000" />
+      <workItem from="1598820060666" duration="2396000" />
+      <workItem from="1598824659269" duration="8522000" />
     </task>
     <task id="LOCAL-00001" summary="Completed all the tasks">
       <created>1598738817764</created>
@@ -385,18 +411,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Completed all the tasks" />
     <MESSAGE value="Updating" />
     <MESSAGE value="Updating again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating again" />
+    <MESSAGE value="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit" />
+    <option name="LAST_COMMIT_MESSAGE" value="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598797058546">
+    <state x="720" y="388" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598830954288">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598797058546" />
+    <state x="720" y="388" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598830954288" />
+    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598825727368">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598825727368" />
     <state x="1398" y="384" width="497" height="561" key="NewPhpClassDialog" timestamp="1598737752213">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -405,9 +437,13 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1140" y="241" width="770" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1598781791690" />
-    <state x="632" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1598777290035">
+    <state x="704" y="325" width="568" height="455" key="refactoring.ChangeSignatureDialog" timestamp="1598826733637">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="632" y="258" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1598777290035" />
+    <state x="704" y="325" width="568" height="455" key="refactoring.ChangeSignatureDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598826733637" />
+    <state x="632" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1598829317737">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="632" y="258" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1598829317737" />
   </component>
 </project>

@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RegistrationCodeController!{% endblock %}
 
 {% block body %}
     <style>
@@ -14,7 +13,7 @@
 
 
         {% if customers is defined %}
-            <h1>Dabar pas daktara yra</h1>
+            <h1>Customers which are admitted</h1>
             <table id="admittedCustomers" class="table table-striped">
                 <thead>
                 <tr>
@@ -35,6 +34,7 @@
         {% endif %}
 
         {% if upcomingCustomers is defined %}
+            <br>
             <h1>Upcoming Visits</h1>
             <table id="upcomingCustomers" class="table table-striped">
                 <thead>
