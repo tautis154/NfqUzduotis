@@ -53,6 +53,7 @@ class DisplayBoardController extends AbstractController
         $doctorFirstNames = $displayBoard->getCustomersInAppointDoctorFirstName($customersInAppointment);
 
         $upcomingCustomersAppointment = $displayBoard->getUpcomingCustomersAppointment();
+
         $doctorFirstNamesUpcomingVisit = $displayBoard->getUpcomingCustomersDoctor($upcomingCustomersAppointment);
 
         $timeLeftForCustomer = $displayBoard->getTimesLeftForCustomers($upcomingCustomersAppointment);

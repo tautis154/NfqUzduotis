@@ -46,19 +46,18 @@
                 </thead>
                 <tbody>
                 {% for key,customer in upcomingCustomers %}
+
+                        <tr>
+                            <td>{{ customer.customerFirstName }}</td>
+                            <td>{{ doctorFirstNamesUpcomingVisit[key] }}</td>
                     {% if timeLeftForCustomers[key] != '0' %}
-                        <tr>
-                            <td>{{ customer.customerFirstName }}</td>
-                            <td>{{ doctorFirstNamesUpcomingVisit[key] }}</td>
                             <td>{{ timeLeftForCustomers[key] }}</td>
-                        </tr>
                     {% else %}
-                        <tr>
-                            <td>{{ customer.customerFirstName }}</td>
-                            <td>{{ doctorFirstNamesUpcomingVisit[key] }}</td>
-                            <td>The doctor should appoint you soon</td>
+                        <td>The doctor should appoint you soon</td>
+
                         </tr>
                     {% endif %}
+
                 {% endfor %}
                 </tbody>
             </table>
