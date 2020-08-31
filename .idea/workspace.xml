@@ -19,13 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit">
+    <list default="true" id="45ac561c-6037-480a-bed6-1ed65080ffab" name="Default Changelist" comment="Updated twig so display board shows correctly">
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DisplayBoardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DisplayBoardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/DisplayBoardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DisplayBoardService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/display_board/board.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/display_board/board.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +170,8 @@
       <workItem from="1598813074251" duration="2615000" />
       <workItem from="1598820060666" duration="2396000" />
       <workItem from="1598824659269" duration="8522000" />
-      <workItem from="1598868589450" duration="1020000" />
+      <workItem from="1598868589450" duration="1491000" />
+      <workItem from="1598870821156" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="Completed all the tasks">
       <created>1598738817764</created>
@@ -376,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598803778564</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Updated twig so display board shows correctly">
+      <created>1598869818599</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1598869818599</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,17 +406,18 @@
     <MESSAGE value="Updating" />
     <MESSAGE value="Updating again" />
     <MESSAGE value="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit" />
-    <option name="LAST_COMMIT_MESSAGE" value="-The specialist has an account which is created trough a data fixture&#10;-The specialist only sees patients which have registered with im&#10;-The specialist can mark that the visit has begun&#10;-Only one visit can be active at a time&#10;-The specialist can end the visit&#10;-The specialist can cancel the visit&#10;-The service department screen shows current visits and fiv upcoming visits&#10;-The service department screen information updates every five seconds&#10;-The service department screen can be accessed with the registration code&#10;-Customer can book an appointment with a specialist (doctor)&#10;-The system generates a reservation code&#10;-By using the reservation code the customer can see how much time is left before the visit&#10;-The customer can cancel the visit" />
+    <MESSAGE value="Updated twig so display board shows correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated twig so display board shows correctly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="388" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598830954288">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="720" y="388" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1598830954288" />
-    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598825727368">
+    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598870850279">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598825727368" />
+    <state x="782" y="329" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1598870850279" />
     <state x="1398" y="384" width="497" height="561" key="NewPhpClassDialog" timestamp="1598737752213">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
